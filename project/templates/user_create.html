@@ -36,27 +36,71 @@
                 </div>
             </div>
 
-            <div class="field is-horizontal"> 
+            <div class="field" id="sexoWrapper" style="display: none">
+                <div class="control">
+                    <label for="sexo">Sexo</label>
+                    <input class="input is-normal" type="text" name="sexo" placeholder="Hombre/Mujer" id="sexo">
+                </div>
+            </div>
+
+            <div class="field" id="fechaNacimientoWrapper" style="display: none">
+                <div class="control">
+                    <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                    <input class="input is-normal" type="text" name="fecha_nacimiento" placeholder="fecha_nacimiento" id="fecha_nacimiento">
+                </div>
+            </div>
+
+            <div class="field" id="patologiaWrapper" style="display: none">
+                <div class="control">
+                    <label for="patologia">Patología</label>
+                    <input class="input is-normal" type="text" name="patologia" placeholder="patologia" id="fecha_nacimiento">
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal control">
+                    <label class="label">Rol:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="select">
+                            <select name="rol" id="rol">
+                                <option>Administrador</option>
+                                <option>Técnico</option>
+                                <option>Cliente</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="tecnicoWrapper" class="field is-horizontal" style="display: none">
                 <div class="control">
                     <div class="field-label is-normal"></div>
-                        <label class="label">Rol:</label>
+                        <label class="label">Técnicos:</label>
                     </div>
                     <div class="field-body">
-                        <div class="field"> 
+                        <div class="field">
                             <div class="select">
-                                <select name="rol">
-                                    <option>Administrador</option>
-                                    <option>Técnico</option>
-                                    <option>Cliente</option>
+                                <select name="tecnico" id="tecnico">
+                                    <option value="">Seleccione...</option>
+                                {%  for tecnico in tecnicos %}
+                                    <option value="{{ tecnico['_id'] }}">{{tecnico.nombre}}</option>
+                                {% endfor %}
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
+
 
             <button class="button is-block is-info is-large is-fullwidth">Guardar</button>
         </form>
     </div>
 </div>
+
 {% endblock %}
+
+

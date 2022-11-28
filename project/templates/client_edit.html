@@ -43,6 +43,50 @@
         </div>
 
         <div class="field is-horizontal">
+            <div class="field-label is-normal control">
+                <label class="label">Sexo:</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="select">
+                        <select name="sexo">
+                            <option>Selecciona el sexo</option>
+                            <option value="mujer" {% if user.sexo == 'mujer' %}selected{% endif %}>Mujer</option>
+                            <option value="hombre" {% if user.sexo == 'hombre' %}selected{% endif %}>Hombre</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label class="label">Email</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <input class="input" type="date" name="fecha_nac" value="{{ user.fecha_nac }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label class="label">Patología</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <input class="input" type="text" name="patologia" value="{{ user.patologia }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
             <div class="field-label">
                 <label class="label">Técnico asignado</label>
             </div>
